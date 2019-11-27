@@ -1,4 +1,4 @@
-require_relative('../db/sql_runner')
+require_relative('../db/sql_runner.rb')
 
 class Student
 
@@ -28,6 +28,13 @@ class Student
     values = [@first_name, @last_name, @house, @age]
     student_data = SqlRunner.run(sql, values)
     @id = student_data.first()['id'].to_i
+  end
+
+  def self.all()
+    sql = "SELECT * FROM students"
+    students = SqlRunner.run(sql)
+    result = students.map{|student| Student.new(student)}
+    return result
   end
 
 end
