@@ -56,8 +56,8 @@ class Student
     WHERE id = $1"
     values = [@house_id]
     house = SqlRunner.run(sql, values)
-    result = House.new(house.first)
-    return result
+    # result = House.new(house.first)
+    @name = house.first()['name']
   end
 
 end

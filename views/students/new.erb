@@ -3,13 +3,16 @@
   <input type="text" name="first_name" id="first-name">
   <label for="last-name">Last Name:</label>
   <input type="text" name="last_name" id="last-name">
+
+
   <label for="house-select">Select a House:</label>
-  <select name="house" id="house">
-    <option value="Gryffindor">Gryffindor</option>
-    <option value="Hufflepuff">Hufflepuff</option>
-    <option value="Ravenclaw">Ravenclaw</option>
-    <option value="Slytherin">Slytherin</option>
+  <select name="house_id" id="house">
+    <% @houses.each do |house| %>
+    <option value=<%= house.id %>><%= house.name %></option>
+    <% end %>
   </select>
+
+
   <label for="age">Age:</label>
   <input type="number" name="age" id="age">
   <input type="submit" value="Add Student">

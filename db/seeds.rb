@@ -15,8 +15,20 @@ house2 = House.new({
   "url" => "private/slytherin.jpg"
   })
 
+house3 = House.new({
+  "name" => "Ravenclaw",
+  "url" => "private/ravenclaw.jpg"
+})
+
+house4 = House.new({
+  "name" => "Hufflepuff",
+  "url" => "private/Hufflepuff.jpg"
+})
+
 house1.save
 house2.save
+house3.save
+house4.save
 
 student1 = Student.new({
    "first_name" => "Harry",
