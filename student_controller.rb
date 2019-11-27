@@ -6,6 +6,13 @@ require_relative('./models/student.rb')
 require_relative('./models/house.rb')
 also_reload('./models/*')
 
+
+post '/students/age' do
+  age = params['age']
+  @students = Student.filter_by_age(age)
+  erb(:"students/index")
+end
+
 #INDEX
 get '/students' do
   @students = Student.all()

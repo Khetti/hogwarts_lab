@@ -60,4 +60,13 @@ class Student
     @name = house.first()['name']
   end
 
+  def self.filter_by_age(age)
+    sql = "SELECT * FROM students
+    WHERE age = $1"
+    values = [age]
+    students = SqlRunner.run(sql,values)
+    result = students.map{|student| Student.new(student)}
+    return result
+  end
+
 end

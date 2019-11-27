@@ -1,5 +1,14 @@
-<h1>Hogwarts Students</h1>
+<form class="" action="/students/age" method="post">
 
+<label for="age-filter">Filter by Age:</label>
+<select name="age" id="age">
+
+  <% @students.each do |student| %>
+  <option value=<%= student.age %>><%= student.age %></option>
+  <% end %>
+</select>
+<input type="submit" value="Go">
+</form>
 <% @students.each do |student| %>
 <p>First Name: <%= student.first_name %></p>
 <p>Last Name: <%= student.last_name %></p>
