@@ -1,5 +1,6 @@
 require('pry')
 require_relative('../models/student.rb')
+require_relative('../models/house.rb')
 
 Student.delete_all()
 House.delete_all()
