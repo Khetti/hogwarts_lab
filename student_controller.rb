@@ -8,5 +8,5 @@ also_reload('./models/*')
 #INDEX
 get '/students' do
   @students = Student.all()
-  erb(:index)
+  erb(:"students/index")
 end
