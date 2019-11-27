@@ -7,10 +7,10 @@ CREATE TABLE students (
   last_name VARCHAR,
   house VARCHAR,
   age INT
-)
+);
 
 CREATE TABLE houses (
   id SERIAL PRIMARY KEY,
   name VARCHAR,
   url VARCHAR
-)
+);
